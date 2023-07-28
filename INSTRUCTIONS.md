@@ -22,7 +22,7 @@ You are going to create a 'TO DO' application. This type of application is very 
 * Deleting a Task should remove it both from the front end as well as the Database.
 
 ### Styling
-
+ 
 Use CSS styling to move the aesthetic of the page beyond the vanilla HTML look:
   - background color of the page
   - font family and size
