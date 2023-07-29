@@ -2,18 +2,43 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool.js')
 
-// const taskList = [];
 
 // GET route
 router.get('/', (req, res) => {
-  res.sendStatus(200);
   console.log('GET Router : ✅')
+  let queryText = `
+  SELECT * FROM "TASKS";
+  `
+  pool.query(queryText)
+    .then((result) => {
+      res.send(result.rows)
+    })
+    .catch((error) => {
+      console.log('Error getting task list', error);
+      res.sendStatus(500);
+    })
 });
 
 // POST route
 router.post('/', (req, res) => {
-  res.sendStatus(200)
   console.log('POST Router : ✅')
+  const newTask = req.body
+  const queryText = `
+  INSERT INTO "TASKS" ("DESCRIPTION", "STATUS")
+  VALUES ($1, $2)
+  `
+  pool.query(queryText, [
+    newTask.description,
+    newTask.status
+  ])
+  .then(result => {
+    res.sendStatus(200)
+    console.log('Ready to Send :', newTask);
+  })
+  .catch(error => {
+    console.log('Error adding new task. Error :', error)
+    res.sendStatus(500)
+  })
 });
 
 // PUT route

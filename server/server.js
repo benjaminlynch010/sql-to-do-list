@@ -9,19 +9,7 @@ app.use(express.static("server/public"));
 
 // Bring in router for /tasks
 let taskRouter = require('./routes/task_router.js')
-
 app.use('/tasks', taskRouter);
-
-// Routes
-
-// GET
-
-// POST
-
-// PUT
-
-// DELETE
-
 
 
 // Start listening for requests on localhost:5000
