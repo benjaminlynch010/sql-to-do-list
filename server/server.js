@@ -7,9 +7,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Serve back static files by default
 app.use(express.static("server/public"));
 
+// Pull Router
+let taskRouter = require('./routes/task_router.js')
 
-
-
+app.use('/tasks', taskRouter);
 
 // Routes
 
