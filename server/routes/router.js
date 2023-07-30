@@ -65,6 +65,7 @@ router.delete('/deletetask/:id', (req, res) => {
   pool.query(query, [params])
     .then((response) => {
       console.log('task deleted')
+      
       res.sendStatus(200)
     })
     .catch((error) => {
