@@ -22,32 +22,29 @@ router.get('/', (req, res) => {
 
 // POST route
 router.post('/', (req, res) => {
-  console.log('req recieved :', req.body)
+  console.log('new task recieved :', req.body)
   let newTask = req.body
   let query = `
   INSERT INTO "tasks" ("description")
   VALUES ($1);
   `
-  pool.query(query, [newTask.description])
-  .then(result => {
+  pool.query(query, [newTask.description]).then((result) => {
     res.sendStatus(200)
-    console.log('req confirm :', result);
-  })
-  .catch(error => {
-    console.log('Error adding new task. Error :', error)
+    console.log('storing in db...', result);
+  }).catch(error => {
+    console.log('cannot store task error :', error)
     res.sendStatus(500)
   })
 });
 
 // PUT route
 router.put('/updatetask/:id', (req, res) => {
-  console.log('/updatetask UPDATE hit :', req.params.id, req.body.newStatus)
+  console.log('updating task...')
   const query = `UPDATE "tasks" SET "status" = $1 WHERE "id" = $2;`
   const params = [req.body.newStatus, req.params.id]
 
-  pool.query(query, params)
-  .then((response) => {
-    console.log('task updated')
+  pool.query(query, params).then((response) => {
+    console.log('task updated and stored')
     res.sendStatus(200)
   }).catch((error) => {
     console.log('error making query :', error)
