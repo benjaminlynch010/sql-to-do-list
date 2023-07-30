@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 
-
 app.use(bodyParser.urlencoded({ extended: true }));
 // Serve back static files by default
 app.use(express.static("server/public"));
