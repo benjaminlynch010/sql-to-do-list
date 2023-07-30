@@ -8,9 +8,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("server/public"));
 
 // Bring in router for /tasks
-let taskRouter = require('./routes/task_router.js')
-app.use('/tasks', taskRouter);
-
+const router = require('./routes/router.js')
+app.use('/tasks', router);
 
 // Start listening for requests on localhost:5000
 const PORT = 5000;
