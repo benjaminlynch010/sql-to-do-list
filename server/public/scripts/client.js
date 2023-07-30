@@ -24,7 +24,7 @@ function handleInput() {
 // get updated taskList from server
 function getTasks() {
   console.log('refreshing task list...')
-  // ajax fun to get whats at /tasks
+  // ajax get whats at /tasks
   $.ajax({
     method: 'GET',
     url: '/tasks'
