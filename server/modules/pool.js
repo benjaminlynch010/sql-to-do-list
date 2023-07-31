@@ -18,6 +18,6 @@ else {
     database: 'todoapp_qawb'
   })
 }
-
+console.log('DB URL : ', process.env.DATABASE_URL)
 
 module.exports = pool
