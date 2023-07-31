@@ -1,8 +1,85 @@
 body {
-  background-color: rgb(40, 38, 40);
+  background-color: rgb(101, 85, 152);
   color: rgb(220, 220, 220);
   font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
 }
+
+/* FLEXBOX LAYOUT  */
+html, body {
+  min-height: 100vh;
+  margin: auto;
+}
+
+body {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-content: center;
+  flex-direction: column;
+}
+
+main {
+  flex: auto;
+  max-width: 80%;
+  margin: auto;
+}
+
+/* HEADER/FOOTER */
+header, footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+h1 {
+  font-size: 4em;
+  margin-top: 0.25em;
+  margin-left: 0.25em;
+}
+
+form {
+  padding-bottom: 2em;
+}
+
+input {
+  padding: 1em;
+  width: 400px;
+  background: #fcfcfc;
+  border: 1px solid;
+}
+button {
+  padding: 0.5em;
+  width: 75px;
+}
+
+/* TABLE LAYOUT */
+table {
+  width: 90%;
+  text-align: center;
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+table, th, td {
+  height: 2.15em;
+}
+th, td {
+  padding: 0.5em;
+  min-width: 3.5em;
+}
+thead {
+  background: rgb(105, 170, 126);
+  color: rgb(220, 220, 220)
+}
+tbody tr:nth-child(odd) {
+  background: rgb(245, 211, 167);
+  color: rgb(40, 38, 40);
+}
+tbody tr:nth-child(even) {
+  background: rgb(230, 121, 153);
+  color: rgb(220, 220, 220);
+}
+
+
 
 /* todo
 [ ] table styling/organize
@@ -11,5 +88,4 @@ body {
     [ ] strikethrough text when true maybe?
 [ ] colors / theme
     - look mac native maybe
-    - jojos for fun
  */

@@ -64,10 +64,12 @@ function render(array) {
   // append all obj in arr to table
   for (let task of array) {    
     // *** edit newRow carefully ***
+    compStat = (checkTruthy(task.status))
+    
     const newRow = $(`
     <tr>
       <td>${task.description}</td>
-      <td>${task.status}</td>
+      <td>${compStat}</td>
       <td> <button class="complete-btn" data-id="${task.id}" data-status="${task.status}">Complete?</button></td>
       <td><button class="delete-btn" data-id="${task.id}">Delete?</button></td> 
     </tr>
@@ -76,6 +78,7 @@ function render(array) {
       // .data('id') is a setter
       // assign id from db to newRow, append to table 
     newRow.data('id');
+    
     $('#table').append(newRow)
   } // end for
   console.log('render complete')
@@ -121,3 +124,13 @@ function deleteTask() {
     console.log('no server connection :', error)
   })
 } // end deleteTask
+
+function checkTruthy(arg) {
+  if (arg == true) {
+    arg = 'Complete ✅'
+  }
+  else if(arg == false) {
+    arg = 'Incomplete'
+  }
+  return arg
+}
