@@ -1,0 +1,1 @@
+console.log('My name is : ', process.env.MY_NAME)
