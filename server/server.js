@@ -11,7 +11,8 @@ const router = require('./routes/router.js')
 app.use('/tasks', router);
 
 // Start listening for requests on localhost:5000
-const PORT = 5000;
+
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log("🙉 on Port:", PORT);
 });
