@@ -1,13 +1,11 @@
 // Setup Pool
 const pg = require ('pg')
 let pool;
-
+console.log('DB URL : ', process.env.DATABASE_URL)
 if (process.env.DATABASE_URL) {
   pool = new pg.Pool({
     connectionString: process.env.DATABASE_URL,
-    ssl: {
-      rejectUnauthorized: false
-
+    ssl: {rejectUnauthorized: false
     }
   })
 }
@@ -15,9 +13,9 @@ else {
   pool = new pg.Pool({
     host: 'localhost',
     port: 5432,
-    database: 'todoapp_qawb'
+    database: 'weekend-sql-to-do-list'
   })
 }
-console.log('DB URL : ', process.env.DATABASE_URL)
+
 
 module.exports = pool
