@@ -79,18 +79,8 @@ tbody tr:nth-child(odd) {
 }
 tbody tr:nth-child(even) {
   background: rgb(57, 60, 79);
-
 }
 
 #complete {
   text-decoration: line-through
 }
-
-/* todo
-[ ] table styling/organize
-[ ] boot strap maybe?
-[ ] keep t/f? remove the column
-    [ ] strikethrough text when true maybe?
-[ ] colors / theme
-    - look mac native maybe
- */
