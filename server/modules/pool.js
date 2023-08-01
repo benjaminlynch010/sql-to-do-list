@@ -13,7 +13,7 @@ else {
   pool = new pg.Pool({
     host: 'localhost',
     port: 5432,
-    database: 'weekend-sql-to-do-list'
+    database: 'todoapp_qawb'
   })
 }
 
