@@ -67,7 +67,6 @@ function render(array) {
     const newRow = $(`
     <tr>
       ${checkTruthy(task)}
-      <td>${task.status}</td>
       <td> <button class="complete-btn" data-id="${task.id}" data-status="${task.status}">Complete?</button></td>
       <td><button class="delete-btn" data-id="${task.id}">Delete?</button></td> 
     </tr>
