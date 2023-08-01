@@ -5,10 +5,6 @@ body {
 }
 
 /* FLEXBOX LAYOUT  */
-html, body {
-  min-height: 100vh;
-  margin: auto;
-}
 
 body {
   display: flex;
@@ -18,11 +14,6 @@ body {
   flex-direction: column;
 }
 
-main {
-  flex: auto;
-  max-width: 80%;
-  margin: auto;
-}
 
 /* HEADER/FOOTER */
 header, footer {
@@ -32,46 +23,32 @@ header, footer {
 }
 
 h1 {
-  font-size: 4em;
   font-variant: small-caps;
-  margin-top: 0.25em;
-  margin-left: 0.25em;
-  
 }
 
 form {
-  padding-bottom: 2em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 input {
-  padding: 1em;
-  width: 400px;
   background: #fcfcfc;
+  margin-right: 1%;
   border: 1px solid;
   font-style: italic;
-}
-button {
-  padding: 0.5em;
-  width: 85px;
 }
 
 /* TABLE LAYOUT */
 table {
-  width: 90%;
+
   text-align: center;
   border: 1px solid rgb(137, 145, 179);
   border-collapse: collapse;
 }
-table, th, td {
-  height: 2.15em;
-}
-th, td {
-  padding: 0.5em;
-  min-width: 3.5em;
-}
+
 thead {
   background: rgb(227, 152, 137);
-  font-size: x-large;
   color: rgb(57, 60, 79);
 }
 tbody tr:nth-child(odd) {
@@ -84,3 +61,4 @@ tbody tr:nth-child(even) {
 #complete {
   text-decoration: line-through
 }
+
