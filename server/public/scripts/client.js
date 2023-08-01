@@ -64,12 +64,10 @@ function render(array) {
   // append all obj in arr to table
   for (let task of array) {    
     // *** edit newRow carefully ***
-    compStat = (checkTruthy(task.status))
-    
     const newRow = $(`
     <tr>
-      <td>${task.description}</td>
-      <td>${compStat}</td>
+      ${checkTruthy(task)}
+      <td>${task.status}</td>
       <td> <button class="complete-btn" data-id="${task.id}" data-status="${task.status}">Complete?</button></td>
       <td><button class="delete-btn" data-id="${task.id}">Delete?</button></td> 
     </tr>
@@ -125,12 +123,12 @@ function deleteTask() {
   })
 } // end deleteTask
 
-function checkTruthy(arg) {
-  if (arg == true) {
-    arg = 'Complete ✅'
+function checkTruthy(task) {
+  if (task.status == true) {
+    return `<td id="complete">✅${task.description}</td>`
+    
   }
-  else if(arg == false) {
-    arg = 'Incomplete'
+  else if(task.status == false) {
+    return `<td>${task.description}</td>`
   }
-  return arg
 }
